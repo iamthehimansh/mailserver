@@ -27,10 +27,10 @@ app.post("/:email", (req, res) => {
   transporter.sendMail(message,  (err, info)=> {
     if (err) {
       console.log(err)
-      res.status(200).send("Sent")
+      res.status(404).send("failed")
     } else {
       console.log(info);
-      res.status(404).send("failed")
+      res.status(200).send("Sent")
     }
   });
 });
